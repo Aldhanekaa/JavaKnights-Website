@@ -1,9 +1,10 @@
-import "./output.css"
+import "./output.css";
+import "@icon-park/react/styles/index.css";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -14,5 +15,5 @@ export default function RootLayout({
       <head />
       <body>{children} </body>
     </html>
-  )
+  );
 }
