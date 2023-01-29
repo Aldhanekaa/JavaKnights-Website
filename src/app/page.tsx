@@ -1,4 +1,6 @@
+import AboutPage from "@/pages/about";
 import NavbarGlobal from "components/global/navbar";
+import Aboutus from "components/home/aboutus";
 import HeroSection from "components/home/hero";
 
 export default function Page() {
@@ -11,6 +13,7 @@ export default function Page() {
     >
       <NavbarGlobal />
       <HeroSection />
+      <Aboutus />
     </div>
   );
 }
