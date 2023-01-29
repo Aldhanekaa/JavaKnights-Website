@@ -24,7 +24,7 @@ export default function HeroSection() {
           </h1>
           <p className="text-gray-400 mt-4">Students of TechnoNatura</p>
         </div>
-        <div className="xl:col-span-5 lg:col-span-3 text-end py-11 font-medium text-gray-300">
+        <div className="col-span-11 xl:col-span-5 lg:col-span-3 text-end py-11 font-medium text-gray-300">
           <div className="">
             2019 ... US | 1{" "}
             <div
