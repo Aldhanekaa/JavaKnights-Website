@@ -59,12 +59,16 @@ export default function Aboutus() {
               placeholder="blur"
             />{" "}
             <div className="w-full h-full relative">
-              <div className="bg-yellow-400 w-12/12 h-12/12 absolute z-10 rotate-45 -left-10 bottom-80"></div>
+              <div className="bg-yellow-400 w-20 h-20 absolute z-10 rotate-45 -left-10 -top-10"></div>
             </div>
           </div>
         </div>
         <div className="col-span-1"></div>
-        <div className="col-span-10 xl:col-span-5 pt-56 xl:pt-44 row-span-2">
+        <div className="col-span-10 xl:col-span-5 xl:pt-44 row-span-2 relative">
+          <img
+            src="/quotationMark.png"
+            className="absolute w-50 h-50 right-12"
+          />
           <h2 className="text-yellow-400 font-bold text-5xl uppercase">
             About Us
           </h2>
