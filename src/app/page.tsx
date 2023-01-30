@@ -2,6 +2,7 @@ import AboutPage from "@/pages/about";
 import NavbarGlobal from "components/global/navbar";
 import Aboutus from "components/home/aboutus";
 import HeroSection from "components/home/hero";
+import MissionSection from "components/home/mission";
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       <NavbarGlobal />
       <HeroSection />
       <Aboutus />
+      <MissionSection />
     </div>
   );
 }
