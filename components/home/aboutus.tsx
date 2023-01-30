@@ -35,9 +35,9 @@ export default function Aboutus() {
     <div className="w-full pt-6 mt-60 pb-60">
       <div className="container mx-auto grid grid-cols-11 grid-rows-2 relative">
         <div className="absolute w-full h-full -z-10">
-          <div className="relative grid grid-cols-11 w-full h-full">
+          <div className="relative grid grid-cols-11 md:grid-rows-2 w-full h-full">
             <div className="col-span-3"></div>
-            <div className="col-span-8 relative">
+            <div className="col-span-8 row-span-2 relative">
               <div
                 className="absolute w-full h-full pb-32 box-content	"
                 style={{
@@ -50,21 +50,30 @@ export default function Aboutus() {
 
         <div
           id="about_us_image"
-          className="relative col-span-11 xl:col-span-5 pt-32"
+          className="relative col-span-11 row-span-1 xl:col-span-5 pt-32 max-h-2 sm:block hidden"
         >
-          <div className="absolute w-full h-full">
+          <div className="absolute w-full">
             <Image
               alt="javaKnightsAboutUsImage"
               src={AboutUsImage}
               placeholder="blur"
             />{" "}
-            <div className="w-full h-full relative">
+            <div className="relative md:block hidden">
               <div className="bg-yellow-400 w-20 h-20 absolute z-10 rotate-45 -left-10 -top-10"></div>
             </div>
           </div>
         </div>
         <div className="col-span-1"></div>
-        <div className="col-span-10 xl:col-span-5 xl:pt-44 row-span-2 relative">
+        <div className="col-span-10 xl:col-span-5 xl:pt-44 row-span-2 relative mt-0 sm:mt-50 md:mt-28 lg:mt-52 xl:mt-0">
+          <div className="mb-20 mr-10 mt-24">
+            <Image
+              alt="javaKnightsAboutUsImage"
+              src={AboutUsImage}
+              placeholder="blur"
+              className="block sm:hidden"
+            />{" "}
+          </div>
+
           <img
             src="/quotationMark.png"
             className="absolute w-50 h-50 right-12"

@@ -5,6 +5,7 @@
   "scripts": {
     "dev-tailwind": "concurrently \"next dev\" \"tailwindcss --input ./src/app/globals.css --output ./src/app/output.css --watch\"",
     "dev": "next dev",
+    "tailwind": "tailwindcss --input ./src/app/globals.css --output ./src/app/output.css --watch",
     "build": "tailwindcss ./src/app/globals.css --output ./src/app/output.css && next build",
     "start": "next start",
     "lint": "next lint"
