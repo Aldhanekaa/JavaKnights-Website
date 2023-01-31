@@ -1,4 +1,8 @@
+"use client";
+
+import { ArrowRight } from "@icon-park/react";
 import Image, { StaticImageData } from "next/image";
+
 import History1 from "public/img/history_1.jpeg";
 import History2 from "public/img/history_2.jpg";
 import History3 from "public/img/history_3.jpg";
@@ -35,9 +39,12 @@ const Histories: HistoriesSectionData = [
 
 function HistoryImg({ img }: { img: StaticImageData }) {
   return (
-    <div className="col-span-5">
-      <Image src={img} alt="ya" placeholder="blur" sizes="100%" />
-    </div>
+    <>
+      <div className="lg:hidden col-span-1 block"></div>
+      <div className="col-span-10 lg:col-span-5">
+        <Image src={img} alt="ya" placeholder="blur" sizes="100%" />
+      </div>
+    </>
   );
 }
 
@@ -49,27 +56,42 @@ function HistoryDesc({
   index: number;
 }) {
   return (
-    <div className="col-span-5 text-4xl text-gray-400 pt-12">
-      <div
-        className="w-full h-2 mb-16"
-        style={{
-          border: "1px solid #707070",
-          opacity: 0.5,
-          background: "#606060",
-        }}
-      />
-
-      <div className="w-full relative">
-        <div className="absolute w-16 h-16 rotate-45 bg-yellow-400 -right-24"></div>
-        <img
-          src="/quotationMark.png"
-          className="absolute w-50 -top-5 h-50 right-12"
+    <>
+      {index % 2 != 0 && <div className="col-span-1 lg:hidden block"></div>}
+      <div className="col-span-10 lg:col-span-5 lg:text-3xl md:text-2xl xl:text-4xl text-gray-400 pt-12">
+        <div
+          className="w-full h-2 mb-16"
+          style={{
+            border: "1px solid #707070",
+            opacity: 0.5,
+            background: "#606060",
+          }}
         />
-        {description.map((desc, index) => (
-          <p className={`${index > 0 && "mt-14"} text-justify`}>{desc}</p>
-        ))}
+
+        <div className="w-full relative">
+          <div
+            className="absolute w-14 h-14 rotate-45 bg-yellow-400 lg:block hidden"
+            style={{
+              [index % 2 == 0 ? "left" : "right"]: "-14%",
+            }}
+          ></div>
+
+          <div
+            className="absolute w-5 h-5 sm:w-8 sm:h-8 rotate-45 bg-yellow-400 block lg:hidden"
+            style={{
+              left: "-7.5%",
+            }}
+          ></div>
+          <img
+            src="/quotationMark.png"
+            className="absolute w-50 -top-5 h-50 right-12"
+          />
+          {description.map((desc, index) => (
+            <p className={`${index > 0 && "mt-14"} text-justify`}>{desc}</p>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -96,11 +118,15 @@ function HistoryCard({
         </>
       ) : (
         <>
+          <div className="lg:hidden col-span-1 block"></div>
+          <div className="col-span-10 lg:col-span-5 lg:hidden block">
+            <Image src={img} alt="ya" placeholder="blur" sizes="100%" />
+          </div>{" "}
           <HistoryDesc description={description} index={index} />
-
           <div className="col-span-1"></div>
-
-          <HistoryImg img={img} />
+          <div className="col-span-10 lg:col-span-5 lg:block hidden">
+            <Image src={img} alt="ya" placeholder="blur" sizes="100%" />
+          </div>{" "}
         </>
       )}
     </div>
@@ -110,6 +136,21 @@ function HistoryCard({
 export default function HistorySection() {
   return (
     <div className="w-full relative container mx-auto pt-52 overflow-hidden pb-72">
+      <div className="absolute w-full bottom-0 pl-12 lg:pl-0 font-medium lgt:text-center z-10">
+        <div className="relative">
+          <p className="text-xl lg:text-center lg:text-3xl text-gray-300">
+            There is lot more from us
+          </p>
+          <div className="flex justify-start lg:justify-center">
+            <a
+              className="bg-gray-600 hover:bg-gray-700 text-gray-400 w-auto px-4 py-2 mt-3 cursor-pointer"
+              href="/history"
+            >
+              Read Full Story <ArrowRight />
+            </a>
+          </div>
+        </div>
+      </div>
       <h2 className="text-center align-center text-5xl text-gray-300 font-bold">
         OUR BRIEF HISTORY
       </h2>
@@ -132,7 +173,7 @@ export default function HistorySection() {
           ></div>
         </div>
       </div>
-      <div className="w-full flex flex-col pt-10">
+      <div className="w-full flex flex-col pt-10 pr-10 lg:pr-0">
         {Histories.map((data, index) => (
           <HistoryCard {...data} index={index} />
         ))}
