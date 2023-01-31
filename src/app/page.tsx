@@ -1,7 +1,7 @@
-import AboutPage from "@/pages/about";
 import NavbarGlobal from "components/global/navbar";
 import Aboutus from "components/home/aboutus";
 import HeroSection from "components/home/hero";
+import HistorySection from "components/home/history";
 import MissionSection from "components/home/mission";
 
 export default function Page() {
@@ -16,6 +16,8 @@ export default function Page() {
       <HeroSection />
       <Aboutus />
       <MissionSection />
+      <HistorySection />
+      <div className="w-full h-80"></div>
     </div>
   );
 }
